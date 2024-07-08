@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+    .gst-button {
+      @apply bg-gradient-to-r from-blue-500 to-blue-700 text-white py-3 px-6 rounded-full text-center hover:from-blue-400 hover:to-blue-600;
+    }
+  }
+  
