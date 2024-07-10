@@ -12,7 +12,7 @@ const FAQItem = ({ question, answer }) => {
           className="flex items-center justify-between p-6 cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <p className="flex-1 mr-4">{question}</p>
+          <p className="flex-1 mr-4 text-2xl">{question}</p>
           <button className="bg-white text-blue-500 rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" 
                  className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}>

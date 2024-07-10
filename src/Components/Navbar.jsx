@@ -16,7 +16,7 @@ const Navbar = () => {
         <Link to="/Aboutus" className="text-black hover:text-gray-800">About Us</Link>
         <Link to="/Services" className="text-black hover:text-gray-800">Services</Link>
         <Link to="/Gst" className="text-black hover:text-gray-800">GST</Link>
-        <Link to="/Ourteam" className="text-black hover:text-gray-800">Our Team</Link>
+        <Link to="/Ourteams" className="text-black hover:text-gray-800">Our Team</Link>
       </div>
       </div>
         <button className="bg-blue-600 text-white px-4 py-2 mr-12 rounded-full hover:bg-blue-700">
