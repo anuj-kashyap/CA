@@ -1,56 +1,50 @@
 import React from 'react';
-import vis from '../assets/vision.png'
-import targ from '../assets/target.png'
-import obj from '../assets/objective.png'
-import bad from '../assets/badge.png'
-import rect from '../assets/rect.png'
+import prof from '../assets/profession.png'
+import expert from '../assets/Expertise.png'
+import cca from '../assets/cca.png'
+import reli from '../assets/Reliability.png'
+
+const FeatureCard = ({ image, title, description }) => (
+  <div className="bg-gradient-to-b from-black to-[#00AAFF] hover:bg-gradient-to-r p-4 sm:p-6 rounded-lg text-white text-center transition-all duration-800 ease-in-out transform hover:scale-105">
+    <div className="bg-white rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+      <img src={image} alt={title} className="w-6 h-6 sm:w-8 sm:h-8" />
+    </div>
+    <h3 className="text-lg sm:text-xl font-bold mb-2">{title}</h3>
+    <p className="text-xs sm:text-sm">{description}</p>
+  </div>
+);
 
 const Feature2 = () => {
   const features = [
     {
-      imageSrc: vis,
+      image: prof,
       title: "Professionalism",
       description: "To not just meet but exceed client expectation consistently by imbibing Teamwork, Professionalism, Personalised Service & Specialisation."
     },
     {
-      imageSrc: targ,
-      title: "Our Mission",
-      description: "We will predominantly work with organizations in the charitable sector and selectively choose our clients to help them achieve their desired outcome."
+      image: expert,
+      title: "Expertise",
+      description: "To not just meet but exceed client expectation consistently by imbibing Teamwork, Professionalism, Personalised Service & Specialisation."
     },
     {
-      imageSrc: obj,
-      title: "Our Objective",
-      description: "We are committed to creating and sustaining long-term relationships by leveraging our experience and expertise to help our clients achieve real success."
+      image: cca,
+      title: "Centric Approach",
+      description: "To not just meet but exceed client expectation consistently by imbibing Teamwork, Professionalism, Personalised Service & Specialisation."
     },
     {
-      imageSrc: bad,
-      title: "Excellence in Service",
-      description: "To not just meet but exceed client expectations consistently by providing Quality, Professionalism, Personalised Service & Specialisation."
+      image: reli,
+      title: "Reliability",
+      description: "To not just meet but exceed client expectation consistently by imbibing Teamwork, Professionalism, Personalised Service & Specialisation."
     }
   ];
 
   return (
-    <div className="py-8 md:py-16 bg-cover bg-center bg-no-repeat">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className="text-center p-4 md:p-6 transition duration-300 ease-in-out transform hover:scale-105 hover:bg-black hover:shadow-lg shadow-slate-cyan-500 group"
-              style={{backgroundImage: `url(${rect})`}}
-            >
-              <div className="bg-white rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mx-auto mb-4 transition-transform group-hover:scale-110">
-                <img
-                  src={feature.imageSrc}
-                  alt={feature.title}
-                  className="w-10 h-10 md:w-12 md:h-12 object-contain"
-                />
-              </div>
-              <h3 className="text-white text-lg md:text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-300 text-xs md:text-sm">{feature.description}</p>
-            </div>
-          ))}
-        </div>
+    <div className="container mx-auto px-4 py-8 sm:py-12">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#00517C] mb-6 sm:mb-10">Why Choose Us?</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {features.map((feature, index) => (
+          <FeatureCard key={index} {...feature} />
+        ))}
       </div>
     </div>
   );

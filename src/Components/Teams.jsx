@@ -35,33 +35,30 @@ const Teams = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-900 mb-8 sm:mb-12 text-center">Our Teams</h1>
-      <div className="relative w-[500px] h-[500px]">
+    <div className="flex flex-col items-center px-4 py-8 sm:py-12">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-900 mb-6 sm:mb-10 text-center">Our Teams</h1>
+      <div className="relative w-full max-w-[500px] aspect-square">
         {/* Outer dashed circle */}
-        <div className="absolute inset-4 border-4 border-blue-300 border-dashed rounded-full"></div>
+        <div className="absolute inset-[5%] border-4 border-blue-300 border-dashed rounded-full"></div>
         
         {/* Central image */}
-        <div className="absolute inset-16 bg-white rounded-full overflow-hidden border-dashed border-4 border-blue-300">
+        <div className="absolute inset-[20%] bg-white rounded-full overflow-hidden border-dashed border-4 border-blue-300">
           <img src={selectedImage.bigImg} alt={selectedImage.name} className="w-full h-full object-cover" />
         </div>
         
         {/* Orbiting images */}
         {images.map((image, index) => {
-          const angle = (index / images.length) * 2 * Math.PI - Math.PI / 2; // Start from top
-          console.log(angle);
-          const left = 250 + 220 * Math.cos(angle);
-          console.log(left);
-          const top = 250 + 220 * Math.sin(angle);
-          console.log(top);
+          const angle = (index / images.length) * 2 * Math.PI - Math.PI / 2;
+          const left = 50 + 44 * Math.cos(angle);
+          const top = 50 + 44 * Math.sin(angle);
 
           return (
             <div
               key={image.id}
-              className="absolute w-16 h-16 bg-white rounded-full overflow-hidden cursor-pointer border-2 border-blue-300 transition-all duration-300"
+              className="absolute w-[12%] aspect-square bg-white rounded-full overflow-hidden cursor-pointer border-2 border-blue-300 transition-all duration-300"
               style={{
-                left: `${left}px`,
-                top: `${top}px`,
+                left: `${left}%`,
+                top: `${top}%`,
                 transform: 'translate(-50%, -50%)',
                 zIndex: selectedImage.id === image.id ? 10 : 1,
               }}
@@ -72,9 +69,12 @@ const Teams = () => {
           );
         })}
       </div>
-      <div className="mt-4">
-        <div className="text-5xl font-bold ml-7">{selectedImage.name} <span className="font-normal text-black text-xl">(Co Founder)</span></div>
-        <div className="text-black mt-2 text-2xl ml-7 mb-20 font-semibold text-justify">
+      <div className="mt-6 sm:mt-8 w-full max-w-2xl">
+        <div className="text-3xl sm:text-4xl md:text-5xl font-bold">
+          {selectedImage.name} 
+          <span className="font-normal text-black text-base sm:text-xl ml-2">(Co Founder)</span>
+        </div>
+        <div className="text-black mt-2 sm:mt-4 text-base sm:text-lg md:text-xl font-semibold text-justify">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </div>
       </div>
