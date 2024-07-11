@@ -104,7 +104,7 @@ const Navbar = () => {
 
           <button 
             onClick={toggleContactForm}
-            className="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700"
+            className="hidden md:block bg-[linear-gradient(102.13deg,#00AAFF_-24.21%,#000000_150.42%)] text-white px-4 py-2 rounded-full hover:bg-blue-700"
           >
             Contact Us
           </button>

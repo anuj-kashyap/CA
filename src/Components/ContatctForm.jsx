@@ -1,9 +1,9 @@
 import React from 'react';
-import logoImage from '../assets/ca_logo.png'; // Adjust this import path as needed
+import logoImage from '../assets/logo 2.png'; // Adjust this import path as needed
 
 const ContactForm = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-800 to-blue-950 p-4 sm:p-6 md:p-8 rounded-3xl max-w-4xl mx-auto text-white">
+    <div className="bg-[linear-gradient(102.13deg,#00AAFF_-24.21%,#000000_150.42%)] p-4 sm:p-6 md:p-8 rounded-3xl max-w-4xl mx-auto text-white">
       <div className="flex flex-col md:flex-row">
         {/* Left side - Contact Info */}
         <div className="w-full md:w-1/2 md:pr-8 mb-8 md:mb-0">
