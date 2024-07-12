@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ca from '../assets/ca_logo.png';
 import ContactForm from '../Components/ContatctForm';  // Adjust this import path as needed
 
@@ -9,9 +9,15 @@ const Navbar = () => {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const [showGstDropdown, setShowGstDropdown] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleContactForm = () => {
     setShowContactForm(!showContactForm);
+  };
+
+  const handleNavigation = (path) => {
+    setIsOpen(false);  // Close the mobile menu
+    navigate(path);    // Navigate to the selected path
   };
 
   const serviceItems = [
@@ -113,37 +119,37 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isOpen && (
           <div className="md:hidden mt-4">
-            <Link to="/" className={`block py-2 ${isActive('/') ? activeStyle : inactiveStyle}`}>Home</Link>
-            <Link to="/Aboutus" className={`block py-2 ${isActive('/Aboutus') ? activeStyle : inactiveStyle}`}>About Us</Link>
+            <button onClick={() => handleNavigation('/')} className={`block w-full text-left py-2 ${isActive('/') ? activeStyle : inactiveStyle}`}>Home</button>
+            <button onClick={() => handleNavigation('/Aboutus')} className={`block w-full text-left py-2 ${isActive('/Aboutus') ? activeStyle : inactiveStyle}`}>About Us</button>
             <div>
-              <Link to="/Services" className={`block py-2 ${isActive('/Services') ? activeStyle : inactiveStyle}`}>Services</Link>
+              <button onClick={() => handleNavigation('/Services')} className={`block w-full text-left py-2 ${isActive('/Services') ? activeStyle : inactiveStyle}`}>Services</button>
               <div className="pl-4">
                 {serviceItems.map((item, index) => (
-                  <Link 
+                  <button 
                     key={index}
-                    to={`/Services/${item.toLowerCase().replace(/ /g, '-')}`}
-                    className={`block py-2 text-sm ${isActive(`/Services/${item.toLowerCase().replace(/ /g, '-')}`) ? activeStyle : 'text-gray-600 hover:text-gray-800'}`}
+                    onClick={() => handleNavigation(`/Services/${item.toLowerCase().replace(/ /g, '-')}`)}
+                    className={`block w-full text-left py-2 text-sm ${isActive(`/Services/${item.toLowerCase().replace(/ /g, '-')}`) ? activeStyle : 'text-gray-600 hover:text-gray-800'}`}
                   >
                     {item}
-                  </Link>
+                  </button>
                 ))}
               </div>
             </div>
             <div>
-              <Link to="/Gst" className={`block py-2 ${isActive('/Gst') ? activeStyle : inactiveStyle}`}>GST</Link>
+              <button onClick={() => handleNavigation('/Gst')} className={`block w-full text-left py-2 ${isActive('/Gst') ? activeStyle : inactiveStyle}`}>GST</button>
               <div className="pl-4">
                 {gstItems.map((item, index) => (
-                  <Link 
+                  <button 
                     key={index}
-                    to={`/Gst/${item.toLowerCase().replace(/ /g, '-')}`}
-                    className={`block py-2 text-sm ${isActive(`/Gst/${item.toLowerCase().replace(/ /g, '-')}`) ? activeStyle : 'text-gray-600 hover:text-gray-800'}`}
+                    onClick={() => handleNavigation(`/Gst/${item.toLowerCase().replace(/ /g, '-')}`)}
+                    className={`block w-full text-left py-2 text-sm ${isActive(`/Gst/${item.toLowerCase().replace(/ /g, '-')}`) ? activeStyle : 'text-gray-600 hover:text-gray-800'}`}
                   >
                     {item}
-                  </Link>
+                  </button>
                 ))}
               </div>
             </div>
-            <Link to="/Ourteams" className={`block py-2 ${isActive('/Ourteams') ? activeStyle : inactiveStyle}`}>Our Team</Link>
+            <button onClick={() => handleNavigation('/Ourteams')} className={`block w-full text-left py-2 ${isActive('/Ourteams') ? activeStyle : inactiveStyle}`}>Our Team</button>
             <button 
               onClick={toggleContactForm}
               className="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700"

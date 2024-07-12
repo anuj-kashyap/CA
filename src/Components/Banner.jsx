@@ -3,7 +3,7 @@ import bg from '../assets/accountant.png';
 
 const Banner = () => {
   return (
-    <div className="relative w-full h-[450px]">
+    <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]">
       <img src={bg} alt="Background" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative flex items-center justify-center h-full">
