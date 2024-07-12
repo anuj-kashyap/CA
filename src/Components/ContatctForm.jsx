@@ -1,11 +1,11 @@
 import React from 'react';
-import logoImage from '../assets/logo 2.png'; // Adjust this import path as needed
+import logoImage from '../assets/logo 2.png'; 
 
 const ContactForm = () => {
   return (
     <div className="bg-[linear-gradient(102.13deg,#00AAFF_-24.21%,#000000_150.42%)] p-4 sm:p-6 md:p-8 rounded-3xl max-w-4xl mx-auto text-white">
       <div className="flex flex-col md:flex-row">
-        {/* Left side - Contact Info */}
+        
         <div className="w-full md:w-1/2 md:pr-8 mb-8 md:mb-0">
           <div className="mb-8">
             <img src={logoImage} alt="CA Logo" className="h-12 sm:h-16 w-auto mb-2" />
@@ -31,7 +31,7 @@ const ContactForm = () => {
           </div>
         </div>
 
-        {/* Right side - Form */}
+        
         <div className="w-full md:w-1/2">
           <form className="space-y-4">
             <input type="text" placeholder="Name" className="w-full bg-blue-700 bg-opacity-50 rounded-full py-2 px-4 text-white placeholder-blue-200" />

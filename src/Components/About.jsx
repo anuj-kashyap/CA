@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row rounded-lg overflow-hidden shadow-lg">
+        <div className="flex flex-col lg:flex-row rounded-lg overflow-hidden ">
           <div className="lg:w-1/2">
             <img
               src={man}

@@ -16,8 +16,8 @@ const Navbar = () => {
   };
 
   const handleNavigation = (path) => {
-    setIsOpen(false);  // Close the mobile menu
-    navigate(path);    // Navigate to the selected path
+    setIsOpen(false);  
+    navigate(path);    
   };
 
   const serviceItems = [
@@ -51,7 +51,7 @@ const Navbar = () => {
             <img src={ca} alt="CA Chartered Accountants" className="h-10 md:h-14" />
           </div>
 
-          {/* Burger menu button */}
+          
           <button 
             onClick={() => setIsOpen(!isOpen)} 
             className="md:hidden focus:outline-none"
@@ -61,7 +61,7 @@ const Navbar = () => {
             </svg>
           </button>
 
-          {/* Desktop menu */}
+         
           <div className="hidden md:flex items-center space-x-8 text-lg font-semibold">
             <Link to="/" className={isActive('/') ? activeStyle : inactiveStyle}>Home</Link>
             <Link to="/Aboutus" className={isActive('/Aboutus') ? activeStyle : inactiveStyle}>About Us</Link>
@@ -116,7 +116,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile menu */}
+        
         {isOpen && (
           <div className="md:hidden mt-4">
             <button onClick={() => handleNavigation('/')} className={`block w-full text-left py-2 ${isActive('/') ? activeStyle : inactiveStyle}`}>Home</button>
@@ -160,7 +160,7 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Contact Form Popup */}
+     
       {showContactForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="relative">

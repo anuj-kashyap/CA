@@ -1,6 +1,4 @@
 import React from 'react';
-
-// Import your images
 import auditingImage from '../assets/Component 26.png';
 import transferpricing from '../assets/Component 27.png';
 import CompanyFormation from '../assets/Component 28.png';
@@ -10,7 +8,7 @@ import Corporate from '../assets/Component 31.png';
 
 const ServiceCard = ({ imageSrc, title }) => (
   <div className="relative rounded-lg overflow-hidden shadow-lg group">
-    <div className="relative w-full h-0 pb-[75%]"> {/* 4:3 aspect ratio */}
+    <div className="relative w-full h-0 pb-[75%]"> 
       <img src={imageSrc} alt={title} className="absolute top-0 left-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-blue-800 bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center">
         <div className="bg-white text-blue-500 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
